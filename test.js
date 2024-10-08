@@ -1,13 +1,6 @@
 const LOG = require('mi-log');
 const log = new LOG([{ style: 'circle', color: 'red', text: 'test' }]);
 const fs = require('fs');
-//removes the micuit-db.config.js file and database.sqlite file
-if (fs.existsSync(process.cwd() + '/micuit-db.config.js')) {
-    fs.unlinkSync(process.cwd() + '/micuit-db.config.js');
-}
-if (fs.existsSync(process.cwd() + '/db/database.sqlite')) {
-    fs.unlinkSync(process.cwd() + '/db/database.sqlite');
-}
 const micuitDb = require('./db');
 //sync les models
 (async () => {
